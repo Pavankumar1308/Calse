@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e2f;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #1e1e2f;
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: minmax(80px, auto) repeat(5, 60px);
+  grid-template-columns: repeat(4, 60px);
+  justify-content: center;
+  background-color: #1e1e2f;
+  padding: 1.4rem;
+  border-radius: 12px;
+  gap: 1rem;
+  max-width: 350px;
+  border: 1px solid hsl(230, 6%, 40%);
+}
+
+body.light-mode .calculator {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+.calculator button {
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  background-color: hsl(230, 6%, 20%);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 10px;
+}
+
+.calculator button:hover {
+  background-color: hsl(230, 6%, 30%);
+}
+
+body.light-mode .calculator button {
+  background-color: #e2e2e2;
+  color: #1e1e2f;
+}
+
+body.light-mode .calculator button:hover {
+  background-color: #cfcfcf;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.output {
+  font-size: 2rem;
+  background-color: #1e1e2f;
+  color: white;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  word-break: break-word;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid hsl(230, 6%, 40%);
+}
+
+body.light-mode .output {
+  background-color: #f5f5f5;
+  color: #1e1e2f;
+  border-color: #ccc;
+}
+
+.prev-display {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+}
+
+body.light-mode .prev-display {
+  color: #1e1e2f;
+}
+
+.history-panel {
+  background-color: hsl(230, 6%, 20%);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem auto;
+  max-width: 350px;
+  border: 1px solid hsl(230, 6%, 40%);
+}
+
+body.light-mode .history-panel {
+  background-color: #e2e2e2;
+  color: #1e1e2f;
+  border-color: #ccc;
+}
+
+.history-list {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.history-list li {
+  padding: 0.5rem;
+  border-bottom: 1px solid hsl(230, 6%, 40%);
+  font-size: 0.95rem;
+  color: white;
+}
+
+body.light-mode .history-list li {
+  color: black !important;
+  border-color: #000000 !important; 
+}
+
+.d-none {
+  display: none !important;
+}
+
+@media (max-width: 500px) {
+  .calculator {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 90vw;
+    padding: 1rem;
+  }
+
+  .calculator button {
+    font-size: 1.1rem;
+  }
+}
